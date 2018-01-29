@@ -1,53 +1,20 @@
-# android-zxingLibrary
+# QRcode
+
+二维码扫描生成
 
 
-**更新日志**
+# 使用
+```java
+allprojects {
+    repositories {
+	  ...
+	  maven { url 'https://jitpack.io' }
+    }
+}
 
-- compile 1.3 2016/08/02 优化扫描API
-
-- compile 1.4 2016/08/03 修复扫描时二维码拉伸问题
-
-- compile 1.5 2016/08/05 更新控制闪光灯API
-
-- compile 1.6 2016/08/08 更新生成带logo二维码时logo不带边距可能存在的问题
-
-- compile 1.7 2016/08/09 修改默认扫描框的大小，适配不同分辨率手机，修改自定义扫描框属性类型
-
-- compile 1.8 2016/08/10 修复解析二维码图片时可能存在的OOM问题
-
-- compile 1.9 2016/09/07 Library库中删除Application，在demo库中的Application执行初始化操作
-
-- compile 2.0 2016/10/12 测试Demo中添加Android M权限处理，代码库添加自定义属性支持小圆点是否展示
-
-- compile 2.1 2016/11/22 修复扫描中的一些bug
-
-- compile 2.2 2017/07/04 更新zxing包，修复一些已知的bug
-
-**使用说明**
-
-- 可打开默认二维码扫描页面
-
-- 支持对图片Bitmap的扫描功能
-
-- 支持对UI的定制化操作
-
-- 支持对条形码的扫描功能
-
-- 支持生成二维码操作
-
-- 支持控制闪光灯开关
-
-**使用方式：**
-
-
-- **集成默认的二维码扫描页面**
-
-在具体介绍该扫描库之前我们先看一下其具体的使用方式，看看是不是几行代码就可以集成二维码扫描的功能。
-
-- 在module的build.gradle中执行compile操作
-
-```
-compile 'cn.yipianfengye.android:zxing-library:2.2'
+dependencies {
+       compile 'com.github.supertaohaili:QRcode:1.0.0'
+}
 ```
 
 - 在demo Application中执行初始化操作
@@ -98,17 +65,6 @@ compile 'cn.yipianfengye.android:zxing-library:2.2'
             }
         }
 ```
-
-怎么样是不是很简单？下面我们可以来看一下具体的执行效果：
-
-**执行效果：**
-
-![image](https://github.com/yipianfengye/android-zxingLibrary/blob/master/images/ezgif.com-video-to-gif%20(2)%2015.33.08.gif)
-
-但是这样的话是不是太简单了，如果我想选择图片解析呢？别急，对二维码图片的解析也是支持的
-
-- **集成对二维码图片的解析功能**
-
 - 调用系统API打开图库
 
 ```
@@ -147,12 +103,6 @@ if (requestCode == REQUEST_IMAGE) {
                 }
             }
 ```
-
-**执行效果**
-
-![image](http://img.blog.csdn.net/20160727170831543)
-
-有了默认的二维码扫描界面，也有了对二维码图片的解析，可能有的同学会说如果我想定制化显示UI怎么办呢？没关系也支持滴。
 
 - **定制化显示扫描UI**
 
@@ -367,11 +317,6 @@ if (requestCode == REQUEST_IMAGE) {
             }
         });
 ```
-
-- 执行效果
-
-![image](https://github.com/yipianfengye/android-zxingLibrary/blob/master/images/ezgif.com-video-to-gif%20(5).gif)
-
 - 支持控制闪光灯
 
 ```
@@ -386,4 +331,7 @@ CodeUtils.isLightEnable(true);
  CodeUtils.isLightEnable(false);
 ```
 
-也可以参考我的博客：<a href="http://blog.csdn.net/qq_23547831/article/details/52037710">几行代码快速集成二维码扫描库</a>
+
+### Known Issues
+If you have any questions/queries/Bugs/Hugs please mail @
+taohailili@gmail.com
