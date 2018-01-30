@@ -13,7 +13,7 @@ allprojects {
 }
 
 dependencies {
-       compile 'com.github.supertaohaili:QRcode:1.0.0'
+       compile 'com.github.supertaohaili:QRcode:1.0.2'
 }
 ```
 

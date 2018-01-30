@@ -19,6 +19,13 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThreeActivity" />
         <activity android:name=".BaseActivity"></activity>
+
+        <activity
+            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
     </application>
 
     <uses-permission android:name="android.permission.CAMERA" />
